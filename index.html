@@ -79,6 +79,30 @@
       color: var(--accent);
     }
 
+    @media (max-width: 768px) {
+      .header__inner {
+        padding: 1rem 1.5rem;
+      }
+
+      .header__logo {
+        font-size: 1.2rem;
+      }
+
+      .header__nav {
+        gap: 1.5rem;
+      }
+
+      .header__nav a {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header__nav {
+        gap: 1rem;
+      }
+    }
+
     /* ── VIDEO BACKGROUND ── */
     .hero {
       position: relative;
@@ -171,6 +195,7 @@
       margin-top: 2rem;
       opacity: 0;
       animation: fadeUp 0.9s 0.55s cubic-bezier(0.16,1,0.3,1) forwards;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -206,6 +231,13 @@
       background: rgba(255,255,255,0.1);
     }
 
+    @media (max-width: 768px) {
+      .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
 
 
     /* ── ABOUT SECTION ── */
@@ -213,6 +245,12 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 6rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 4rem 1.5rem;
+      }
     }
 
     .section__label {
@@ -259,6 +297,12 @@
       margin-top: 3rem;
     }
 
+    @media (max-width: 480px) {
+      .skills {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+
     .skill-tag {
       background: var(--card);
       padding: 0.8rem 1.2rem;
@@ -279,6 +323,12 @@
     .showcase {
       background: var(--dark);
       padding: 6rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .showcase {
+        padding: 4rem 1.5rem;
+      }
     }
 
     .showcase__inner {
@@ -306,6 +356,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
     }
 
     .card {
@@ -387,6 +444,36 @@
 
     /* ── KEYFRAMES ── */
     @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── RESPONSIVE UTILITIES ── */
+    @media (max-width: 1024px) {
+      .hero__content {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 70px;
+      }
+
+      .card img {
+        height: 200px;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+      }
+    }es fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
