@@ -163,16 +163,12 @@
       font-size: clamp(2.3rem, 3.4vw, 3rem);
       font-weight: 400;
       letter-spacing: 0.05em;
-      background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #3b82f6;
       margin-bottom: 1rem;
       opacity: 0;
       animation: fadeUp 0.9s 0.15s cubic-bezier(0.16,1,0.3,1) forwards, 
-                 shimmer 3s linear infinite,
-                 shadowMove 2s 0.15s ease-out forwards;
+                 shadowMove 2s 0.15s ease-out forwards,
+                 colorToWhite 1s 2.15s ease-out forwards;
     }
 
     .hero__title {
@@ -180,25 +176,21 @@
       font-size: clamp(3rem, 8vw, 5.5rem);
       line-height: 1.1;
       letter-spacing: -0.02em;
-      background: linear-gradient(90deg, #ffffff, #e0e7ff, #ffffff);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #ffffff;
       font-weight: 700;
       margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeUp 1s 0.3s cubic-bezier(0.16,1,0.3,1) forwards, 
-                 shimmer 4s linear infinite,
                  shadowMove 2s 0.3s ease-out forwards;
     }
 
     .hero__title span {
       display: block;
-      color: var(--off);
+      color: #6b7280;
       font-weight: 400;
       font-size: clamp(1.2rem, 3vw, 2rem);
       margin-top: 0.5rem;
+      animation: colorToWhite 1s 2.3s ease-out forwards;
     }
 
     .hero__cta {
@@ -493,6 +485,21 @@
           2px 2px 0 rgba(59, 130, 246, 0.4),
           3px 3px 0 rgba(59, 130, 246, 0.3),
           4px 4px 8px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    @keyframes fadeToWhite {
+      to {
+        background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    @keyframes colorToWhite {
+      to {
+        color: #ffffff;
       }
     }
 
